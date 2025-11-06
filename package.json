@@ -1,0 +1,32 @@
+{
+  "name": "dockerkontit",
+  "version": "1.0.0",
+  "description": "Esimerkkisovellus docker-konttien rakentamisesta ja niiden käyttämisestä",
+  "keywords": [
+    "Node.js",
+    "Docker",
+    "Postgresql"
+  ],
+  "homepage": "https://github.com/VilleSysinoro/DockerKontit#readme",
+  "bugs": {
+    "url": "https://github.com/VilleSysinoro/DockerKontit/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VilleSysinoro/DockerKontit.git"
+  },
+  "license": "ISC",
+  "author": "VilleS",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "express-handlebars": "^8.0.3",
+    "pg": "^8.16.3",
+    "pg-pool": "^3.10.1"
+  },
+  "devDependencies": {}
+}
