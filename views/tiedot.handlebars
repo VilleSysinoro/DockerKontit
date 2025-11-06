@@ -4,7 +4,18 @@
 
         <!-- A picture about containers limited to available space in the container -->
         <img width="100%" src="/images/Konttikuvia3.png" alt="Kontin varjossa">
+        <br>
 
+        {{!-- Start Handlebars For-Each-loop to show all rows in containerData --}}
+        {{#each containerData}}
+
+            {{!-- Print values of omistaja-key and sisalto-key --}}
+            <h4>{{omistaja}} {{sisalto}}</h4>
+
+        {{!-- End the loop --}}
+        {{/each}}
+
+        <br>
         <!-- A relative link to tiedot URL -->
         <a style="font-size: xx-large;" href="/">Takaisin kotisivulle</a>
 

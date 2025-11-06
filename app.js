@@ -11,10 +11,9 @@ const {engine} = require('express-handlebars');
 
 // Local libraries and modules
 // ---------------------------
-const dbOperations = require('./dbOperations')
 
-// A module to demonstrate local dependency to be included in the container
-//const pgtools =  require('./postgres-tools')
+// A module to demonstrate local dependency to be included ion the container
+const dbOperations = require('./dbOperations');
 
 // INITIALIZATION
 // --------------
@@ -40,15 +39,22 @@ app.use(express.urlencoded({extended: true}))
 // URL ROUTES
 // ----------
 
-
 // Route to home page
 app.get('/', (req, res) => {
     res.render('home')
 });
 
-// A test route to test.handlebars page
+// A test route to tiedot page using dynamic data
 app.get('/tiedot', (req, res) => {
-    res.render('tiedot')
+
+    // Call funtion getContainerData from module dbOpeations
+    // It returns a promise so you need then to wait resutlset
+    dbOperations.getContainerData().then((resultset) =>{
+
+        // Render the page and give a key to the resultset to be
+        // used in handlebars code
+        res.render('tiedot', {containerData: resultset.rows});
+    })
 });
 
 // SERVER START
